@@ -1,8 +1,9 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-export default {
+module.exports = {
   devtool: 'inline-source-map',
+  mode: 'development',
   entry: [
     path.resolve(__dirname, './client/src/app/index.js')
   ],

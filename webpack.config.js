@@ -3,8 +3,9 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-export default {
+module.exports =  {
   devtool: 'source-map',
+  mode: 'production',
   entry: [
     path.resolve(__dirname, './client/src/app/index.js')
   ],

@@ -1,11 +1,12 @@
 {
-  "name": "javascript-boilerplate",
+  "name": "javascript-coding",
   "version": "1.0.0",
   "description": "Javascript development environment",
-  "author": "Your name here",
+  "author": "Natasha",
   "jest": {
     "verbose": true
   },
+  "type": "module",
   "scripts": {
     "start": "npm-run-all --parallel open:src start-mockapi",
     "open:src": "babel-node server/server.js",
