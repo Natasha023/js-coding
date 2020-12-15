@@ -1,21 +1,15 @@
-import "./index.css";
-import { getUsers } from "../api/userApi";
+import './index.css';
+import moment from 'moment';
 
-// Populate table via API call
+export const display_time = () => {
+    const time = moment().format("DD MMM YYYY hh:mm:ss");
+    if( global.document.getElementById('time')) {
+        global.document.getElementById('time').innerHTML = time;
+    }
+    setInterval(() => {
+        display_time();
+    }, 1000);
+}
+display_time()
 
-getUsers().then((result) => {
-  let usersBody = "";
-
-  result.forEach((user) => {
-    usersBody += `<tr>
-    <td>${user.id}</td>
-    <td>${user.firstName}</td>
-    <td>${user.lastName}</td>
-    <td>${user.email}</td>
-`;
-  });
-
-  global.document.getElementById("users").innerHTML = usersBody;
-});
-
-export const sum = (a, b) => a + b;
+export const sum = (a, b) => a + b

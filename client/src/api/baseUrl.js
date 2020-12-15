@@ -1,10 +1,8 @@
-export default function getBaseUrl() {
-  return getQueryStringParameterByName("useMockApi")
-    ? "http://localhost:3001/"
-    : "https://mysterious-dawn-16770.herokuapp.com/";
+export const getBaseUrl = () => {
+  return "http://localhost:3001/";
 }
 
-function getQueryStringParameterByName(name, url) {
+const getQueryStringParameterByName = (name, url) => {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, "\\$&");
   var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),

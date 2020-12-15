@@ -3,9 +3,9 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-module.exports =  {
+module.exports = {
   devtool: 'source-map',
-  mode: 'production',
+  mode: 'production'
   entry: [
     path.resolve(__dirname, './client/src/app/index.js')
   ],
@@ -30,8 +30,8 @@ module.exports =  {
           use: ['babel-loader'],
         },
         {
-          test: /\.[s]css$/,
-          use: [MiniCssExtractPlugin.loader,'style-loader', 'css-loader', 'sass-loader'],
+          test: /\.css$/,
+          use: [MiniCssExtractPlugin.loader,'style-loader', 'css-loader'],
         }
     ]
   }

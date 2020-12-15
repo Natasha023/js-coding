@@ -1,20 +1,20 @@
 // import "whatwg-fetch"; // for browsers that don't support fetch
 import getBaseUrl from "./baseUrl";
 
-const baseUrl = getBaseUrl();
+const baseUrl = 'http://localhost:3001/';
 
-export function getUsers() {
+export const getUsers = () => {
   return get("users");
 }
 
-function get(url) {
+const get = (url) => {
   return fetch(baseUrl + url).then(onSuccess, onError);
 }
 
-function onSuccess(response) {
+const onSuccess = (response) => {
   return response.json();
 }
 
-function onError(error) {
+const onError = (error) => {
   console.log(error);
 }
